@@ -13,10 +13,10 @@ def index():
         content = data["content"]
         sender = data['sender']
 
-        platform = platform.system()
-        if platform == 'Darwin':
+        platformos = platform.system()
+        if platformos == 'Darwin':
             os.system("osascript -e 'display notification \"%s\" with title \"收到来自：%s的通知\"'" % (content, sender))
-        elif platform == 'Windows':
+        elif platformos == 'Windows':
             from win10toast import ToastNotifier
             toaster = ToastNotifier()
             toaster.show_toast(u'收到来自：%s的通知' % sender, u'%s' % content)
@@ -25,5 +25,5 @@ def index():
 
 if __name__ == "__main__":
 
-    app.run(host='192.168.1.215')
+    app.run(host='192.168.1.220')
 
