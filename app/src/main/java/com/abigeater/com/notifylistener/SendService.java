@@ -34,7 +34,6 @@ public class SendService {
             public void run() {
 
                 String receIp = getIp();
-                Log.i("Post", receIp);
                 if(receIp == null) {
                     return ;
                 }
